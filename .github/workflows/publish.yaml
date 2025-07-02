@@ -32,7 +32,7 @@ jobs:
       with:
         name: output-410
         path: |
-          output
+          source/output
   build-411:
     runs-on: ubuntu-latest
     steps:
@@ -50,4 +50,4 @@ jobs:
       with:
         name: output-411
         path: |
-          output
+          source/output
