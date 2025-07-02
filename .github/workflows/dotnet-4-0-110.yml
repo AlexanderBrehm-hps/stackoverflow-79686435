@@ -25,7 +25,7 @@ jobs:
     - name: Publish
       run: dotnet publish publish-test/publish-test.csproj --self-contained -r win-x64 -v d --output ./output
     - name: Archive Artifacts
-      uses: actions/upload-artifact@4
+      uses: actions/upload-artifact@v4
       with:
         name: output-410
         path: output
