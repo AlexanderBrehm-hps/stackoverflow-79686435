@@ -31,7 +31,8 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: output-410
-        path: output
+        path: |
+          output
   build-411:
     runs-on: ubuntu-latest
     steps:
@@ -48,4 +49,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: output-411
-        path: output
+        path: |
+          output
