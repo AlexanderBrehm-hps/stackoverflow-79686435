@@ -1,0 +1,31 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.410
+    - name: Remove global.json
+      run: rm publish-test/global.json
+    - name: Publish
+      run: dotnet publish publish-test/publish-test.csproj --self-contained -r win-x64 -v d --output ./output
+    - name: Archive Artifacts
+      uses: actions/upload-artifact@4
+      with:
+        name: output-410
+        path: output
