@@ -14,3 +14,5 @@ You should now have two folders that you can push to a UNC path to try and run t
 ```
 \\my-unc-path\output-8-0-410\publish-test.exe
 ```
+
+If you look in the logs of Github-Actions, you can see the archives made by both builds, you should be able to download them from there and test them. I haven't gotten around to having them publish to a github release yet.
