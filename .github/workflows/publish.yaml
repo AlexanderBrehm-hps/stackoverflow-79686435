@@ -51,3 +51,21 @@ jobs:
         name: output-411
         path: |
           source/output
+  build-412:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.412
+    - name: Remove global.json
+      run: rm global.json
+    - name: Publish
+      run: dotnet publish publish-test/publish-test.csproj --self-contained -r win-x64 -v d --output ./output
+    - name: Archive Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: output-412
+        path: |
+          source/output
